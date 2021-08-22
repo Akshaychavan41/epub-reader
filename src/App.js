@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useRef, useState } from "react";
+import ReactDOM from "react-dom";
+import book from "./Assets/Eloquent_JavaScript.epub";
+import ePub, { Rendition, Location } from "epubjs";
+import Reader from "./Components/Reader.js";
+const root = document.getElementById("root");
 
-function App() {
+const onRelocated = (location) => {
+  const cfi = location.start.cfi;
+  localStorage.setItem("cfi", cfi);
+};
+
+const App = () => {
+  const cfi = localStorage.getItem("cfi");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Reader url={book} onRelocated={onRelocated} cfi={cfi} showPercentage />
   );
-}
+};
 
 export default App;

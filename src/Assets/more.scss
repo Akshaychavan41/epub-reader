@@ -1,0 +1,43 @@
+.react-epubjs {
+  .more {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    transition: all ease-in-out 0.5s;
+    .setting {
+      width: 100%;
+      height: 60%;
+      background: #8a8a8ac7;
+    }
+    .cancel {
+      width: 100%;
+      height: 40%;
+    }
+    .info {
+      height: 3rem;
+      background: #f2f2f2;
+      line-height: 3rem;
+
+      .title {
+        color: #000;
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+    .chapters {
+      background-color: #ffffff;
+      z-index: 3;
+      padding: 2rem;
+      height: calc(100% - 3rem);
+      width: 30vw;
+      overflow: auto;
+
+      .chapter {
+        padding: 0.3rem;
+        cursor: pointer;
+        display: table;
+      }
+    }
+  }
+}

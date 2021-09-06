@@ -31,7 +31,6 @@ export default function Reader({
   const [background, setBackground] = useState();
   const [percent, setPercent] = useState(0);
   const [currentLayout, setCurrentLayout] = useState();
-
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -176,7 +175,7 @@ export default function Reader({
   return (
     <div>
       <div onSwiped={handleSwipe} className="react-epubjs">
-        {!rendition && <Loader />}
+        <Loader />
         <Navigator
           handleShowMore={handleShowMore}
           visible={true}

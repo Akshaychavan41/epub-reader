@@ -1,0 +1,42 @@
+.container {
+  padding: 10px;
+  position: relative;
+  .close-btn {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+  }
+  .font-size {
+    display: flex;
+  }
+  display: flex;
+  flex-direction: column;
+  .color-container {
+    display: flex;
+    flex-direction: column;
+    .color-picker {
+      background-color: skyblue;
+      justify-content: space-around;
+      align-self: center;
+      > span {
+        > div {
+          border: 2px solid skyblue;
+        }
+      }
+    }
+  }
+  .font-container {
+    display: flex;
+    flex-direction: column;
+    .select {
+      align-self: center;
+      width: 200px;
+    }
+  }
+  .layout-container {
+    .radio-btn {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

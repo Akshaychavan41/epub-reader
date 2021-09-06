@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import book from "./Assets/Eloquent_JavaScript.epub";
 import ePub, { Rendition, Location } from "epubjs";
 import Reader from "./Components/Reader.js";
+import Homepage from "./Components/Homepage";
 const root = document.getElementById("root");
 
 const onRelocated = (location) => {
@@ -13,7 +14,8 @@ const onRelocated = (location) => {
 const App = () => {
   const cfi = localStorage.getItem("cfi");
   return (
-    <Reader url={book} onRelocated={onRelocated} cfi={cfi} showPercentage />
+    <Homepage />
+    //<Reader url={book} onRelocated={onRelocated} cfi={cfi} showPercentage />
   );
 };
 

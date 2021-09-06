@@ -20,13 +20,17 @@ export default function Reader({
   className = "",
   cfi,
   renderChapters,
+  handleClose,
 }) {
   const ref = useRef(null);
   const [rendition, setRendition] = useState(null);
   const [isMoreShow, setIsMoreShow] = useState(false);
   const [info, setInfo] = useState();
-  const [fontSize, setfontSize] = useState(12);
+  const [fontSize, setfontSize] = useState(16);
+  const [font, setFont] = useState();
+  const [background, setBackground] = useState();
   const [percent, setPercent] = useState(0);
+  const [currentLayout, setCurrentLayout] = useState();
 
   useEffect(() => {
     const el = ref.current;
@@ -37,8 +41,9 @@ export default function Reader({
     const rendition = ebook.renderTo(el, {
       flow: "paginated",
       width: "100%",
-      height: "100%",
+      // height: "100%",
     });
+    setCurrentLayout("paginated");
     onReaderLoad(ebook, rendition);
   }, []);
 
@@ -59,6 +64,7 @@ export default function Reader({
       onLoad && onLoad(rendition);
       onRelocated && rendition.on("relocated", handleRelocated(ebook));
     });
+    console.log(rendition.themes.default);
   };
 
   const setupStyles = (rendition) => {
@@ -90,9 +96,15 @@ export default function Reader({
     onNext && onNext(rendition);
   };
 
+  const handleFontChange = (e) => {
+    console.log(e.target.value);
+    rendition && rendition.themes.font(e.target.value);
+    setFont(e.target.value);
+  };
+
   const handleBackgroundChange = (color) => {
     console.log(rendition.themes.default(), color);
-    if (rendition) {
+    if (rendition && color && background !== color.hex) {
       if (color.hex == "#171717") {
         rendition.themes.default({
           body: { background: `${color.hex} !important` },
@@ -104,8 +116,32 @@ export default function Reader({
           "*": { color: "black !important" },
         });
       }
+      setBackground(color.hex);
     }
   };
+
+  const changeLayout = (e) => {
+    const val = e.target.value;
+    setCurrentLayout(val);
+    rendition.flow(val);
+    rendition.resize();
+  };
+
+  const upHandler = ({ key }) => {
+    if (key === "ArrowLeft") {
+      handlePrev();
+    }
+    if (key === "ArrowRight") {
+      handleNext();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keyup", upHandler);
+    return () => {
+      window.removeEventListener("keyup", upHandler);
+    };
+  });
 
   useEffect(() => {
     rendition && rendition.themes.fontSize(`${fontSize}px`);
@@ -144,6 +180,11 @@ export default function Reader({
           fontIncrease={handleFontIncrease}
           percent={showPercentage ? percent : null}
           percentString={percentString}
+          handleClose={handleClose}
+          handleFontChange={handleFontChange}
+          font={font}
+          layout={currentLayout}
+          changeLayout={changeLayout}
         />
         <More
           info={info}

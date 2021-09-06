@@ -4,6 +4,9 @@ import MenuIcon from "@material-ui/icons/Menu";
 import BackgroundColor from "./BackgroundColor";
 import ColorLensIcon from "@material-ui/icons/ColorLens";
 import { IconButton } from "@material-ui/core";
+import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
+import NavigateNextIcon from "@material-ui/icons/NavigateNext";
+import CancelIcon from "@material-ui/icons/Cancel";
 export const Navigator = ({
   handleShowMore,
   handleBackground,
@@ -12,8 +15,13 @@ export const Navigator = ({
   visible,
   handleNext,
   handlePrev,
+  handleClose,
   percent,
   percentString = "$percent of this book",
+  handleFontChange,
+  font,
+  layout,
+  changeLayout,
 }) => {
   const [showDialog, setShowDialog] = useState(false);
   if (!visible) return null;
@@ -26,13 +34,22 @@ export const Navigator = ({
       <div className="more-info-area" onClick={handleShowMore}>
         <MenuIcon color="primary" fontSize="large" />
       </div>
-      <IconButton className="icon">
-        <ColorLensIcon
-          fontSize="large"
-          color="primary"
-          onClick={() => setShowDialog((old) => !old)}
-        />
-      </IconButton>
+      <div className="icon-container">
+        <IconButton>
+          <CancelIcon
+            fontSize="large"
+            color="secondary"
+            onClick={handleClose}
+          />
+        </IconButton>
+        <IconButton>
+          <ColorLensIcon
+            fontSize="large"
+            color="primary"
+            onClick={() => setShowDialog((old) => !old)}
+          />
+        </IconButton>
+      </div>
 
       {showDialog && (
         <div className="background-area">
@@ -40,11 +57,20 @@ export const Navigator = ({
             fontDecrease={fontDecrease}
             fontIncrease={fontIncrease}
             colorChange={handleBackground}
+            handleFontChange={handleFontChange}
+            font={font}
+            handleClose={() => setShowDialog(false)}
+            layout={layout}
+            changeLayout={changeLayout}
           />
         </div>
       )}
-      <div className="prev-area" onClick={handlePrev}></div>
-      <div className="next-area" onClick={handleNext}></div>
+      <div className="prev-area" onClick={handlePrev}>
+        <NavigateBeforeIcon fontSize="large" />
+      </div>
+      <div className="next-area" onClick={handleNext}>
+        <NavigateNextIcon fontSize="large" />
+      </div>
       {percent ? <div className="page-number">{percentStr}</div> : null}
     </div>
   );

@@ -24,9 +24,11 @@ export default function Chapters({ rendition, renderChapters }) {
         : tocs.map((toc, index) => {
             const { label } = toc;
             return (
-              <p className="chapter" key={index} onClick={gotoChapter(toc)}>
-                {index}: {label}
-              </p>
+              <div className="block">
+                <p className="chapter" key={index} onClick={gotoChapter(toc)}>
+                  {index}: {label}
+                </p>
+              </div>
             );
           })}
     </div>

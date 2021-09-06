@@ -13,50 +13,62 @@
       margin-left: 4px;
       margin-top: 4px;
       z-index: 10;
-      background-color: white;
+      background-color: rgba(227, 240, 216, 0.815);
       border: 2px solid black;
       border-radius: 5px;
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
     }
-    .icon {
+    .icon-container {
       position: absolute;
       right: 20px;
       top: 10px;
+      display: flex;
+      flex-direction: column;
+      z-index: 10;
     }
     .background-area {
-      width: 200px;
+      width: 300px;
       z-index: 4;
       position: absolute;
       right: 80px;
       top: 10px;
       background-color: white;
-      border: 1px solid grey;
+      border: 1px solid black;
       padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     }
     .next-area {
-      width: 50%;
-      height: 70%;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      padding: 10px;
       opacity: 0.3;
       float: right;
+      cursor: pointer;
     }
 
     .prev-area {
-      width: 50%;
-      height: 70%;
+      position: absolute;
+      top: 50%;
+      left: 0px;
+      padding: 10px;
       opacity: 0.3;
       float: left;
+      cursor: pointer;
     }
 
     .page-number {
-      position: absolute;
-      width: 100%;
+      position: fixed;
       background: #c0c0c02e;
       padding: 5px 15px;
       color: #888;
       text-align: center;
       bottom: 0;
+      right: 0;
     }
   }
 }

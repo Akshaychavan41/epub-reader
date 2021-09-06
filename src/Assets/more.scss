@@ -26,17 +26,21 @@
       }
     }
     .chapters {
-      background-color: #ffffff;
+      background-color: #f2f2f2;
       z-index: 3;
-      padding: 2rem;
+      padding: 1rem;
       height: calc(100% - 3rem);
-      width: 30vw;
+      width: 25vw;
       overflow: auto;
-
-      .chapter {
-        padding: 0.3rem;
-        cursor: pointer;
-        display: table;
+      border: 1px solid black;
+      .block {
+        width: 100%;
+        border-bottom: 0.5px solid grey;
+        .chapter {
+          padding: 0.1rem;
+          cursor: pointer;
+          display: table;
+        }
       }
     }
   }

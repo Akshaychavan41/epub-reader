@@ -34,8 +34,6 @@ export default function Reader({
 
   useEffect(() => {
     const el = ref.current;
-    console.log(el);
-
     if (!el) return;
     const ebook = ePub(url);
     const rendition = ebook.renderTo(el, {
@@ -64,7 +62,6 @@ export default function Reader({
       onLoad && onLoad(rendition);
       onRelocated && rendition.on("relocated", handleRelocated(ebook));
     });
-    console.log(rendition.themes.default);
   };
 
   const setupStyles = (rendition) => {
@@ -97,13 +94,11 @@ export default function Reader({
   };
 
   const handleFontChange = (e) => {
-    console.log(e.target.value);
     rendition && rendition.themes.font(e.target.value);
     setFont(e.target.value);
   };
 
   const handleBackgroundChange = (color) => {
-    console.log(rendition.themes.default(), color);
     if (rendition && color && background !== color.hex) {
       if (color.hex == "#171717") {
         rendition.themes.default({
@@ -148,10 +143,22 @@ export default function Reader({
   }, [fontSize]);
 
   const handleFontIncrease = () => {
-    setfontSize((old) => old + 2);
+    setfontSize((old) => {
+      if (old > 28) {
+        return old;
+      } else {
+        return old + 2;
+      }
+    });
   };
   const handleFontDecrease = () => {
-    setfontSize((old) => old - 2);
+    setfontSize((old) => {
+      if (old < 12) {
+        return old;
+      } else {
+        return old - 2;
+      }
+    });
   };
 
   const handlePrev = () => {

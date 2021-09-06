@@ -32,7 +32,7 @@ export const Navigator = ({
   return (
     <div className="navigator">
       <div className="more-info-area" onClick={handleShowMore}>
-        <MenuIcon color="primary" fontSize="large" />
+        <MenuIcon color="primary" fontSize="medium" />
       </div>
       <div className="icon-container">
         <IconButton>

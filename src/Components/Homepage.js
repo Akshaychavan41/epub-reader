@@ -10,6 +10,7 @@ import Reader from "./Reader.js";
 import book from "../Assets/Eloquent_JavaScript.epub";
 import { ReactComponent as Reading1 } from "../Assets/svg/reading1.svg";
 import { ReactComponent as Reading2 } from "../Assets/svg/reading2.svg";
+import { ReactComponent as EbookLogo } from "../Assets/svg/ebooklogo.svg";
 function Homepage(props) {
   const [selectedFile, setSelectedFile] = useState();
   const [showBook, setShowBook] = useState(false);
@@ -41,6 +42,7 @@ function Homepage(props) {
       {!showBook && (
         <div className="background">
           <div className="img-container">
+            <EbookLogo className="logo" />
             <Reading1 className="img" />
           </div>
           <div className="card-container">

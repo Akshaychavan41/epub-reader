@@ -9,8 +9,16 @@
     .img-container {
       width: 50%;
       padding: 30px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
       svg {
         width: 80%;
+      }
+      .logo {
+        width: 300px;
+        position: absolute;
+        left: 10%;
       }
     }
     .card-container {

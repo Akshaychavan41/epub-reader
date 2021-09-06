@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/epub-reader/static/css/main.1e6d7f2c.chunk.css",
+    "main.js": "/epub-reader/static/js/main.cc533044.chunk.js",
+    "main.js.map": "/epub-reader/static/js/main.cc533044.chunk.js.map",
+    "runtime-main.js": "/epub-reader/static/js/runtime-main.d86bc8ad.js",
+    "runtime-main.js.map": "/epub-reader/static/js/runtime-main.d86bc8ad.js.map",
+    "static/js/2.50fe68c6.chunk.js": "/epub-reader/static/js/2.50fe68c6.chunk.js",
+    "static/js/2.50fe68c6.chunk.js.map": "/epub-reader/static/js/2.50fe68c6.chunk.js.map",
+    "static/js/3.462a77ea.chunk.js": "/epub-reader/static/js/3.462a77ea.chunk.js",
+    "static/js/3.462a77ea.chunk.js.map": "/epub-reader/static/js/3.462a77ea.chunk.js.map",
+    "index.html": "/epub-reader/index.html",
+    "static/css/main.1e6d7f2c.chunk.css.map": "/epub-reader/static/css/main.1e6d7f2c.chunk.css.map",
+    "static/js/2.50fe68c6.chunk.js.LICENSE.txt": "/epub-reader/static/js/2.50fe68c6.chunk.js.LICENSE.txt",
+    "static/media/Eloquent_JavaScript.386384ae.epub": "/epub-reader/static/media/Eloquent_JavaScript.386384ae.epub",
+    "static/media/ebooklogo.d559584e.svg": "/epub-reader/static/media/ebooklogo.d559584e.svg",
+    "static/media/reading1.eb1fa94e.svg": "/epub-reader/static/media/reading1.eb1fa94e.svg",
+    "static/media/reading2.9aae328f.svg": "/epub-reader/static/media/reading2.9aae328f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d86bc8ad.js",
+    "static/js/2.50fe68c6.chunk.js",
+    "static/css/main.1e6d7f2c.chunk.css",
+    "static/js/main.cc533044.chunk.js"
+  ]
+}

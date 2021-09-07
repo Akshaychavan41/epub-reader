@@ -32,6 +32,7 @@ export default function Reader({
   const [percent, setPercent] = useState(0);
   const [currentLayout, setCurrentLayout] = useState();
   useEffect(() => {
+    setRendition(null);
     const el = ref.current;
     if (!el) return;
     const ebook = ePub(url);
@@ -46,7 +47,6 @@ export default function Reader({
 
   const onReaderLoad = (ebook, rendition) => {
     if (!rendition) return;
-    setRendition(rendition);
 
     cfi ? rendition.display(cfi) : rendition.display();
 
@@ -61,6 +61,7 @@ export default function Reader({
       onLoad && onLoad(rendition);
       onRelocated && rendition.on("relocated", handleRelocated(ebook));
     });
+    setRendition(rendition);
   };
 
   const setupStyles = (rendition) => {
@@ -175,7 +176,7 @@ export default function Reader({
   return (
     <div>
       <div onSwiped={handleSwipe} className="react-epubjs">
-        <Loader />
+        {!rendition && <Loader />}
         <Navigator
           handleShowMore={handleShowMore}
           visible={true}

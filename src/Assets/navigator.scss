@@ -33,7 +33,7 @@
       width: 300px;
       z-index: 4;
       position: absolute;
-      right: 80px;
+      right: 8vw;
       top: 10px;
       background-color: white;
       border: 1px solid black;
@@ -69,6 +69,24 @@
       text-align: center;
       bottom: 0;
       right: 0;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .react-epubjs {
+    .navigator {
+      .background-area {
+        width: 300px;
+        z-index: 4;
+        position: absolute;
+        right: 10vw;
+        top: 15vh;
+        background-color: white;
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+      }
     }
   }
 }

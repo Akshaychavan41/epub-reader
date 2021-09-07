@@ -3,9 +3,8 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1366 400" style="enable-background:new 0 0 1366 400;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#0AB900;stroke:#1B1464;stroke-miterlimit:10;}
-	.st1{fill:#FF802E;stroke:#42210B;stroke-miterlimit:10;}
-	.st2{fill:#0AB900;stroke:#42210B;stroke-miterlimit:10;}
+	.st0{fill:#1B008B;stroke:#1B1464;stroke-miterlimit:10;}
+	.st1{stroke:#42210B;stroke-miterlimit:10;}
 </style>
 <g>
 	<path class="st0" d="M306.6,32.3H97.3c-7.1,0-12.9,6.1-12.9,13.6v299.6c0,7.5,5.8,13.6,12.9,13.6h209.3c7.1,0,12.9-6.1,12.9-13.6
@@ -52,5 +51,5 @@
 			c-1.5-0.3-2.9-0.4-4.9-0.4c-10.1,0-17.2,8-19.1,19.2c-0.4,2.1-0.6,4.6-0.6,7v44H1243V194.6z"/>
 	</g>
 </g>
-<rect x="375.7" y="279.2" class="st2" width="875" height="12.7"/>
+<rect x="375.7" y="279.2" class="st0" width="875" height="12.7"/>
 </svg>
